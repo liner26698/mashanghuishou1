@@ -1,0 +1,128 @@
+ 
+//px转rem
+@function pxChangeRem($number){ 
+    @return $number / (750/10) + rem; 
+  } 
+  $themeColor:#2384d0;
+  $themeBlack:#000;
+  $themeGrey:#dbdfea;
+  $themeRed:#d32b3f;
+  $themeRed1:red;
+  $themeColor1:#dcdcdc;
+  $themeColor2: #cccccc;
+  $Color-white:#fff;
+  $themeColor3:#999;
+  $themeColor4:#f7f7f7;
+  $themeColor5:#f29360;
+  $themeColor6:#f2f2f2;
+  $C10: pxChangeRem(10);
+  $C12: pxChangeRem(12);
+  $C14: pxChangeRem(14);
+  $C16: pxChangeRem(16);
+  $C18: pxChangeRem(18);
+  $C20: pxChangeRem(20);
+  $C22: pxChangeRem(22);
+  $C24: pxChangeRem(24);
+  $C26: pxChangeRem(26);
+  $C28: pxChangeRem(28);
+  $C30: pxChangeRem(30);
+  $C32: pxChangeRem(32);
+  $C36: pxChangeRem(36);
+  $C40: pxChangeRem(40);
+  $C48: pxChangeRem(48);
+  $C50: pxChangeRem(50);
+  $C60: pxChangeRem(60);
+  $C90: pxChangeRem(90);
+  $C100: pxChangeRem(100);
+  @mixin pd100 {
+      padding-bottom: $C100;
+  }
+//   @mixin iconBackground {
+//     background: url('../../assets/zkw-icon.png') no-repeat;
+//     background-size: pxChangeRem(403) pxChangeRem(284);
+//   }
+//   @mixin iconBackground1 {
+//     background: url('../../assets/about-icon.png') no-repeat;
+//     background-size: pxChangeRem(567) pxChangeRem(100);
+//   }
+//   @mixin iconsuccess {
+//     background: url('../../assets/img/i01.png') no-repeat;
+//     background-size: pxChangeRem(100) pxChangeRem(110);
+//   }
+    @mixin phone {
+        display: inline-block;
+        width: pxChangeRem(38);
+        height: pxChangeRem(54);
+        position: absolute;
+        top: 50%;
+        margin-top: pxChangeRem(-27);
+        left: pxChangeRem(20);
+        @include iconBackground;
+        background-position: pxChangeRem(-294) pxChangeRem(-57);
+    }
+    @mixin msg {
+        display: inline-block;
+        width: pxChangeRem(54);
+        height: pxChangeRem(54);
+        position: absolute;
+        top: 50%;
+        margin-top: pxChangeRem(-27);
+        left: pxChangeRem(10);
+        @include iconBackground;
+        background-position: pxChangeRem(-230) pxChangeRem(-57);
+    }
+  @mixin ell{
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+  }
+  @mixin opacityBg{
+      background: rgba(68,92,149,0.95);
+  }
+  @mixin rotate45{
+      -moz-transform:rotate(45deg);
+      -webkit-transform:rotate(45deg);
+      -o-transform:rotate(45deg);  
+      -ms-transform:rotate(45deg);
+      transform:rotate(45deg);
+  }
+  @mixin rotate90{
+      -moz-transform:rotate(90deg);
+      -webkit-transform:rotate(90deg);
+      -o-transform:rotate(90deg);  
+      -ms-transform:rotate(90deg);
+      transform:rotate(90deg);
+  }
+  @mixin rotate180{
+      -moz-transform:rotate(180deg);
+      -webkit-transform:rotate(180deg);
+      -o-transform:rotate(180deg);  
+      -ms-transform:rotate(180deg);
+      transform:rotate(180deg);
+  }
+  @mixin animate{
+      -moz-transition:all .4s linear  ;
+      -webkit-transition:all .4s linear ;
+      -o-transition:all .4s linear ;
+      -ms-transition:all .4s linear ;
+      transition:all .4s linear ;
+  }
+  @mixin borderGrey{
+      border:pxChangeRem(1) solid $themeGrey;
+  }
+  @mixin TextACenter{
+      text-align: center;
+  }
+  @mixin verticalAlignMiddle{
+      vertical-align: middle;
+  }
+  
+  @mixin Fixedcenter($width: null, $height: null) { 
+      position: fixed; 
+      top: 50%; 
+      left: 50%; 
+      @if not $width and not $height { transform: translate(-50%, -50%); } 
+      @else if $width and $height { width: $width; height: $height; margin: -($width / 2) #{0 0} -($height / 2); } 
+      @else if not $height { width: $width; margin-left: -($width / 2); transform: translateY(-50%); } 
+      @else { height: $height; margin-top: -($height / 2); transform: translateX(-50%); } 
+  }
