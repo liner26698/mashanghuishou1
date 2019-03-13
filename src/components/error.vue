@@ -9,7 +9,11 @@
 <script>
 
   export default {
-
+    data() {
+      return {
+        msg:''
+      }
+    },
   };
 </script>
 <style lang="scss" scoped>
